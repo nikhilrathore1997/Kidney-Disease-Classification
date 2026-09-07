@@ -1,16 +1,13 @@
 # from src.cnnClassifier import logger
-
+from cnnClassifier import logger
+from cnnClassifier.pipeline.stag_1_data_ingestion import DataIngestionTrainingPipeline
 # logger.info("wellcome to our custom log")
 
-from box.exceptions import BoxValueError
-import yaml
-from cnnClassifier import logger
-import json
-import joblib
-from ensure import ensure_annotation
-from box import ConfigBox
-from pathlib immport Path
-from typing import Any
-import base64
-
-@def read_yaml(path_to_yaml:Path)->ConfigBox:
+Stage_Name = "Data Ingestion Stage"
+try:
+    logger.info(f">>>>>>>>stage {Stage_Name} started<<<")
+    obj = DataIngestionTrainingPipeline()
+    obj.main()
+    logger.info(f">>>>>> stage {Stage_Name} Completed <<<<<\n\nx=======")
+except Exception as e:
+    raise e
