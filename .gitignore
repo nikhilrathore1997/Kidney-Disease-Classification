@@ -1,6 +1,7 @@
 artifacts/*
 .env
 .venv
+env/*
 *.egg-info
 __pycache__
 *$py.class
